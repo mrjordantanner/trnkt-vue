@@ -1,19 +1,18 @@
 <template>
-    <div>
-        <div v-show="showNavBar" class="navbar-container">
-            <router-link to="/">
-                <a class="nav-link" @click="hideNavBar">TRNKT</a>
-            </router-link>
+    <div v-show="showNavBar" class="navbar-container">
 
-            <router-link to="/explore" >
-                <button class="button outline-primary" @click="randomizeOffset(); displayCollectionButton()">E X P L O R E</button>
-            </router-link>
+        <router-link to="/">
+            <a class="nav-link" @click="hideNavBar">TRNKT</a>
+        </router-link>
 
-            <router-link to="/collection">
-                <button class="button outline-secondary" v-show="showCollectionButton" @click="hideCollectionButton">C O L L E C T I O N</button>  
-            </router-link>  
+        <router-link to="/explore" >
+            <button class="button outline-primary" @click="randomizeOffset(); displayCollectionButton()">E X P L O R E</button>
+        </router-link>
 
-        </div>
+        <router-link to="/collection">
+            <button class="button outline-secondary" v-show="showCollectionButton" @click="hideCollectionButton">C O L L E C T I O N</button>  
+        </router-link>  
+
     </div>
 </template>
 
@@ -30,7 +29,6 @@ export default {
     methods: {
         randomizeOffset() {
             this.$emit('randomize-offset')
-            console.log('rand')
         },
         displayCollectionButton() {
             this.showCollectionButton = true
@@ -39,7 +37,7 @@ export default {
             this.showCollectionButton = false
         },
         hideNavBar() {
-            this.showNavBar = false
+            // this.showNavBar = false
         }
     }
 
@@ -66,15 +64,14 @@ export default {
         color: white;
         font-size: 1.75rem;
         font-weight: bold;
-        opacity: 0.8;
+        opacity: 0.9;
         transition: all 0.1s;
 
         &:hover {
-            opacity: 0.9;
+            opacity: 1;
         }
 
         &:active {
-            opacity: 1;
             color: gold;
         }
     }
@@ -95,45 +92,6 @@ export default {
 
     li {
         display: inline;
-    }
-
-    .button {
-    // pointer-events: auto;
-    z-index: 100;
-    padding: 0.35rem 1rem;
-    margin: 0 1.5rem;
-    font-weight: bold;
-    font-size: 1rem;
-    transition: all 0.15s;
-    background: transparent;
-    user-select: none;
-
-        &:hover {
-            cursor: pointer;
-        }
-    }
-
-    .outline-primary {
-        height: 36px;
-        color: gold;
-        border: 3px solid gold;
-
-        &:hover {
-            background: gold;
-            color: black;
-            
-        }
-    }
-
-    .outline-secondary {
-        height: 36px;
-        color: violet;
-        border: 3px solid violet;
-
-        &:hover {
-            background: violet;
-            color: black;
-        }
     }
 
 }
