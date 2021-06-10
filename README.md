@@ -1,4 +1,5 @@
-# trnkt-vue
+# TRNKT
+> NFT viewer that consumes the Opensea.io API to display crypto artwork.
 
-## Work-in-progress of a React.js project to Vue.js
+## Work-in-progress project porting a React.js app to Vue.js
 Live React App: https://trnkt.herokuapp.com/

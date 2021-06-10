@@ -1,5 +1,6 @@
 <template>
-    <button @click="onClick()" class="btn outline-primary">{{ text }}</button>
+    <!-- <button @click="onClick()" class="button outline-primary">{{ text }}</button> -->
+    <router-link to="/explore" class="button outline-primary">{{ text }}</router-link> 
 </template>
 
 <script>

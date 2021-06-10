@@ -1,10 +1,9 @@
 <template>
     <div>
-
-        <div class="navbar-container">
+        <div v-show="showNavBar" class="navbar-container">
             <router-link to="/" class="nav-link">TRNKT</router-link>
-            <Button @btn-click="$emit('btn-click')" class="button outline-primary" text="EXPLORE"/>
-            <Button @btn-click="$emit('btn-click')" v-show="showCollectionButton" class="button outline-secondary" text="COLLECTION" />
+            <router-link to="/explore" class="button outline-primary" @click="$emit('randomize-offset')">E X P L O R E</router-link>
+            <router-link to="/collection" class="button outline-secondary" v-show="showCollectionButton">C O L L E C T I O N</router-link>  
         </div>
     </div>
 </template>
@@ -16,6 +15,7 @@ export default {
     data() {
         return {
             showCollectionButton: true,
+            showNavBar: true
         }
     },
     components: {
@@ -73,6 +73,45 @@ export default {
 
     li {
         display: inline;
+    }
+
+    .button {
+    // pointer-events: auto;
+    z-index: 100;
+    padding: 0.35rem 1rem;
+    margin: 0 1.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.15s;
+    background: transparent;
+    user-select: none;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .outline-primary {
+        height: 36px;
+        color: gold;
+        border: 3px solid gold;
+
+        &:hover {
+            background: gold;
+            color: black;
+            
+        }
+    }
+
+    .outline-secondary {
+        height: 36px;
+        color: violet;
+        border: 3px solid violet;
+
+        &:hover {
+            background: violet;
+            color: black;
+        }
     }
 
 }
