@@ -8,7 +8,7 @@
 						Use the Explore button to display random NFT's from the Opensea API, click or tap to view them in detail, and save to your Collection for later viewing. <br></br>
 					</p>
 					<router-link to='/explore'>
-						<button @click="$emit('randomize-offset')" class='button outline-secondary enter'>
+						<button @click="$emit('randomize-offset')" class='button outline-primary explore-button'>
 							E X P L O R E
 						</button>
 					</router-link>
@@ -60,6 +60,18 @@ export default {
         padding: 1rem;
         margin: 1rem;
     }
+
+    .explore-button {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 20vw;
+    height: 60px;
+    margin: 20px 0 70px 0;
+}
 }
 
 

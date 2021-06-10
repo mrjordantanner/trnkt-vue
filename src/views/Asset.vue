@@ -3,7 +3,7 @@
 </template>
 
 <script>
-
+// Show route for each individual asset
 export default {
   name: 'Asset',
   components: {
