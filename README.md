@@ -1,24 +1,4 @@
 # trnkt-vue
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Work-in-progress of a React.js project to Vue.js
+Live React App: https://trnkt.herokuapp.com/
