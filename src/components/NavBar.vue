@@ -1,15 +1,24 @@
 <template>
     <div>
         <div v-show="showNavBar" class="navbar-container">
-            <router-link to="/" class="nav-link">TRNKT</router-link>
-            <router-link to="/explore" class="button outline-primary" @click="$emit('randomize-offset')">E X P L O R E</router-link>
-            <router-link to="/collection" class="button outline-secondary" v-show="showCollectionButton">C O L L E C T I O N</router-link>  
+            <router-link to="/">
+                <a class="nav-link" @click="hideNavBar">TRNKT</a>
+            </router-link>
+
+            <router-link to="/explore" >
+                <button class="button outline-primary" @click="randomizeOffset(); displayCollectionButton()">E X P L O R E</button>
+            </router-link>
+
+            <router-link to="/collection">
+                <button class="button outline-secondary" v-show="showCollectionButton" @click="hideCollectionButton">C O L L E C T I O N</button>  
+            </router-link>  
+
         </div>
     </div>
 </template>
 
 <script>
-import Button from './Button'
+
 export default {
     name: 'NavBar',
     data() {
@@ -18,9 +27,22 @@ export default {
             showNavBar: true
         }
     },
-    components: {
-        Button
-    },
+    methods: {
+        randomizeOffset() {
+            this.$emit('randomize-offset')
+            console.log('rand')
+        },
+        displayCollectionButton() {
+            this.showCollectionButton = true
+        },
+        hideCollectionButton() {
+            this.showCollectionButton = false
+        },
+        hideNavBar() {
+            this.showNavBar = false
+        }
+    }
+
 }
 </script>
 

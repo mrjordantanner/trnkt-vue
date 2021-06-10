@@ -1,10 +1,6 @@
 <template>
   <div id="app">
-    <NavBar />
-    <!-- <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div> -->
+    <NavBar @randomizeOffset="randomizeOffset"/>
     <router-view></router-view>
   </div>
 </template>
@@ -15,6 +11,11 @@ export default {
   name: 'App',
   components: {
     NavBar
+  },
+  methods: {
+    randomizeOffset() {
+      console.log('randomize offset')
+    }
   }
 }
 </script>

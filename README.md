@@ -3,3 +3,4 @@
 
 ## Work-in-progress project porting a React.js app to Vue.js
 Live React App: https://trnkt.herokuapp.com/
+Repo of React version: https://github.com/mrjordantanner/trnkt
